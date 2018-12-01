@@ -14,7 +14,7 @@ class room{
 protected:
     wall* wall1;
 public:
-    virtual ~room();
+    virtual ~room()= default;
     virtual void room_print()=0;
 
 

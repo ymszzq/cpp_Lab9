@@ -10,11 +10,11 @@
 #include "room.h"
 
 class maze {
+protected:
+    std::vector<room*> roomList;
 public:
-//    std::vector<room> roomList;
-//
-    virtual ~maze();
-virtual void maze_print();
+    virtual ~maze()= default;
+    virtual void maze_print()=0;
 };
 
 

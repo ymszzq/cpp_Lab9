@@ -51,22 +51,23 @@ cout<<"f_room\n";
 };
 
 class f_maze:public maze{
+
 public:
     f_maze(room* room1){
-//        roomList.push_back(*room1);
+        roomList.push_back(room1);
+        cout<<"f_rooms added to maze";
+        maze_print();
     }
 
-    ~f_maze() override {
-
-    }
+    ~f_maze() override= default;
 
     void maze_print() override {
-        maze::maze_print();
+        cout<<"f_maze maze\n";
     }
 };
 
 
-class futuristic_maze_factory : public maze_factory{
+class f_maze_factory : public maze_factory{
     maze *make_maze() override {
         room * room1 = make_room();
         room* room2 = make_room();

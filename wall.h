@@ -8,7 +8,8 @@
 
 class wall {
 public:
-virtual void wall_print();
+    virtual ~wall()= default;
+virtual void wall_print()=0;
 };
 
 

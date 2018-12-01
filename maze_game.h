@@ -9,7 +9,12 @@
 #include "maze_factory.h"
 
 class maze_game {
-maze* ceate_maze(maze_factory& mazeFactory);
+public:
+maze* create_maze(maze_factory &mazeFactory){
+    maze* maze1 = mazeFactory.make_maze();
+
+    return maze1;
+};
 
 
 };

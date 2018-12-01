@@ -10,17 +10,21 @@
 
 class enchanted_wall:public wall{
 public:
+    ~enchanted_wall() override = default;
+
     enchanted_wall(){
         wall_print();
     }
     void wall_print() override{
-        cout<<"enchated wall";
+        cout<<"e wall\n";
     }
 };
 
 
 class enchated_door:public door{
 public:
+    ~enchated_door() override = default;
+
     enchated_door(room& room1, room& room2) {
         this->room1=&room1;
         this->room2=&room2;
@@ -29,40 +33,47 @@ public:
 
 private:
     void door_print() override{
-        cout<<"enchated wall\n";
+        cout<<"e wall\n";
     };
 };
 
 
 class enchated_room:public room{
 public:
+    ~enchated_room() override = default;
+
     enchated_room(wall* wall2){
         room_print();
     }
 
     void room_print() override{
-        cout<<"enchated room\n";
+        cout<<"e room\n";
     };
 
 };
 
 
 class enchated_maze:public maze{
+
 public:
+    ~enchated_maze() override = default;
+
     enchated_maze(room* room1){
-//        roomList.push_back(*room1);
+        roomList.push_back(room1);
+        cout<<"e_rooms added to maze";
+        maze_print();
 
     };
 
     void maze_print() override {
-        cout<<"enchated maze\n";
+        cout<<"e maze\n";
     }
 };
 
 
 
 
-class enchanted_maze_factory: public maze_factory {
+class e_maze_factory: public maze_factory {
     maze* make_maze() override{
         room * room1 = make_room();
         room* room2 = make_room();

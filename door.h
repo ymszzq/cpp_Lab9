@@ -14,9 +14,9 @@ protected:
     room* room1;
     room* room2;
 public:
+    virtual ~door()= default;
 
-
-    virtual void door_print();
+    virtual void door_print()=0;
 };
 
 

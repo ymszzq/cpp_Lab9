@@ -15,6 +15,7 @@ using namespace std;
 
 
 class maze_factory {
+public:
 virtual maze* make_maze()=0;
 virtual wall* make_wall_()=0;
 virtual room* make_room()=0;
